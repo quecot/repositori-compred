@@ -1,4 +1,4 @@
-import Resource from "@/interfaces/resource";
+import Resource from "@/app/components/interfaces/resource";
 
 const resources: Array<Resource> = [
   {
@@ -171,4 +171,12 @@ const resources: Array<Resource> = [
   },
 ];
 
-export default resources;
+const dimensionToColor = new Map<string, string>();
+dimensionToColor.set('Planificació de la recerca', 'c1');
+dimensionToColor.set('Fonamentació teòrica', 'c2');
+dimensionToColor.set('Disseny i aplicació', 'c3');
+dimensionToColor.set('Discussió i conclusions', 'c4');
+dimensionToColor.set('Bibliografia', 'c5');
+dimensionToColor.set('Comunicació i TIC', 'c6');
+
+export { resources, dimensionToColor };
