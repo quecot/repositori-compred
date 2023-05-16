@@ -2,8 +2,8 @@
 
 import DimensionFilters from "@/app/components/DimensionFilters";
 import Resources from "@/app/components/Resources";
-import { resources } from "@/app/components/constants";
-import Resource from "@/app/components/interfaces/resource";
+import { resources } from "@/app/constants";
+import Resource from "@/app/interfaces/resource";
 import { useState } from "react";
 
 import { config } from '@fortawesome/fontawesome-svg-core'

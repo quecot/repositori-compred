@@ -1,4 +1,4 @@
-import Resource from "@/app/components/interfaces/resource";
+import Resource from "@/app/interfaces/resource";
 
 const resources: Array<Resource> = [
   {
@@ -8,6 +8,7 @@ const resources: Array<Resource> = [
     dimension: 'Planificació de la recerca',
     subdimension: 'Elecció del tema i pregunta de recerca',
     level: 2,
+    language: 'Español',
     url: 'https://www.uca.ac.cr/wp-content/uploads/2017/10/Investigacion.pdf',
   },
   {
@@ -17,6 +18,7 @@ const resources: Array<Resource> = [
     dimension: 'Planificació de la recerca',
     subdimension: 'Elecció del tema i pregunta de recerca',
     level: 1,
+    language: 'Español',
     url: 'https://www.redalyc.org/pdf/1794/179421472004.pdf',
   },
   {
@@ -26,6 +28,7 @@ const resources: Array<Resource> = [
     dimension: 'Planificació de la recerca',
     subdimension: 'Formulació d\'objectius i hipòtesis',
     level: 1,
+    language: 'Català',
     url: 'https://www.eltefege.eu/index.php/2018/03/15/apunt-4-la-formulacio-dels-objectius-de-recerca/',
   },
   {
@@ -35,6 +38,7 @@ const resources: Array<Resource> = [
     dimension: 'Fonamentació teòrica',
     subdimension: 'Cerca d\'informació',
     level: 2,
+    language: 'Català',
     url: 'https://tutorialfortrans.blogspot.com/',
   },
   {
@@ -44,6 +48,7 @@ const resources: Array<Resource> = [
     dimension: 'Fonamentació teòrica',
     subdimension: 'Cerca d\'informació',
     level: 1,
+    language: 'English',
     url: 'https://www.review.mai.ac.nz/mrindex/TK/article/view/53/53.html',
   },
   {
@@ -53,6 +58,7 @@ const resources: Array<Resource> = [
     dimension: 'Fonamentació teòrica',
     subdimension: 'Cerca d\'informació',
     level: 1,
+    language: 'English',
     url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3687192/',
   },
   {
@@ -62,6 +68,7 @@ const resources: Array<Resource> = [
     dimension: 'Fonamentació teòrica',
     subdimension: 'Eines per cercar informació',
     level: 2,
+    language: 'Català',
     url: 'https://ddd.uab.cat/record/142532',
   },
   {
@@ -71,6 +78,7 @@ const resources: Array<Resource> = [
     dimension: 'Fonamentació teòrica',
     subdimension: 'Eines per cercar informació',
     level: 1,
+    language: 'Català',
     url: 'https://ddd.uab.cat/record/174633',
   },
   {
@@ -80,6 +88,7 @@ const resources: Array<Resource> = [
     dimension: 'Fonamentació teòrica',
     subdimension: 'Estratègies d\'elaboració del text',
     level: 1,
+    language: 'English',
     url: 'https://www.scielo.br/scielo.php?pid=S1807-59322019000100318&script=sci_arttext',
   },
   {
@@ -89,6 +98,7 @@ const resources: Array<Resource> = [
     dimension: 'Fonamentació teòrica',
     subdimension: 'Estratègies d\'elaboració del text',
     level: 2,
+    language: 'English',
     url: 'https://journals.sagepub.com/doi/full/10.1177/1094428120943281',
   },
   {
@@ -98,6 +108,7 @@ const resources: Array<Resource> = [
     dimension: 'Disseny i aplicació',
     subdimension: 'Dissenys metodològics',
     level: 2,
+    language: 'Català',
     url: 'https://research-publishing.net/publication/978-1-908416-47-6.pdf',
   },
   {
@@ -107,6 +118,7 @@ const resources: Array<Resource> = [
     dimension: 'Disseny i aplicació',
     subdimension: 'Dissenys metodològics',
     level: 2,
+    language: 'English',
     url: 'https://wtgrantfoundation.org/library/uploads/2019/02/A-Review-of-Methods-FINAL003.pdf',
   },
   {
@@ -116,6 +128,7 @@ const resources: Array<Resource> = [
     dimension: 'Disseny i aplicació',
     subdimension: 'Dissenys metodològics',
     level: 1,
+    language: 'Español',
     url: 'https://revistas.upr.edu/index.php/griot/article/download/1775/1568',
   },
   {
@@ -125,6 +138,7 @@ const resources: Array<Resource> = [
     dimension: 'Disseny i aplicació',
     subdimension: 'Dissenys metodològics',
     level: 1,
+    language: 'Català',
     url: 'https://goo.gl/ZMy8E6',
   },
   {
@@ -134,6 +148,7 @@ const resources: Array<Resource> = [
     dimension: 'Disseny i aplicació',
     subdimension: 'Dissenys metodològics',
     level: 1,
+    language: 'English',
     url: 'https://www.redalyc.org/pdf/337/33770318.pdf',
   },
   {
@@ -142,6 +157,7 @@ const resources: Array<Resource> = [
     type: 'Vídeo',
     dimension: 'Discussió i conclusions',
     level: 1,
+    language: 'Català',
     url: 'https://www.youtube.com/watch?v=_0MwkPVxLYo&list=PLfbyb8xMvO3GYYg9NphpQcrtxrruFTY9R&index=4',
   },
   {
@@ -150,6 +166,7 @@ const resources: Array<Resource> = [
     type: 'Vídeo',
     dimension: 'Bibliografia',
     level: 1,
+    language: 'English',
     url: 'https://www.youtube.com/watch?v=jOVZp8m0PCM&feature=youtu.be',
   },
   {
@@ -158,6 +175,7 @@ const resources: Array<Resource> = [
     type: 'Llibre',
     dimension: 'Bibliografia',
     level: 1,
+    language: 'Català',
     url: 'https://ddd.uab.cat/record/145881?ln=es',
   },
   {
@@ -167,6 +185,7 @@ const resources: Array<Resource> = [
     dimension: 'Comunicació i TIC',
     subdimension: 'Comunicació escrita i oral de la recerca',
     level: 1,
+    language: 'Català',
     url: 'https://www.youtube.com/watch?v=8NtqeUeGJTM',
   },
 ];
