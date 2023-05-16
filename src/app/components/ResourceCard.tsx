@@ -38,9 +38,9 @@ const ResourceCard: React.FC<Props> = ({ resource }) => {
 
         <div className="flex items-center gap-2 px-2">
           {
-            resource.language === 'Català' ? <img src='/catalonia.svg' className="w-7" alt="Català" title="Català" /> :
-            resource.language === 'English' ? <img src='/uk.svg' className="w-7" alt="English" title="English" /> :
-            resource.language === 'Español' ? <img src='/spain.svg' className="w-7" alt="Español" title="Español" /> :
+            resource.language === 'Català' ? <img src='/catalonia.svg' className="w-6 rounded" alt="Català" title="Català" /> :
+            resource.language === 'English' ? <img src='/uk.svg' className="w-6 rounded" alt="English" title="English" /> :
+            resource.language === 'Español' ? <img src='/spain.svg' className="w-6 rounded" alt="Español" title="Español" /> :
             null
           }
           
