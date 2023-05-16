@@ -22,9 +22,7 @@ const App = () => {
     <main className='flex flex-col items-center w-screen h-screen'>
       <header className="flex justify-center w-full py-2 text-2xl font-bold text-white bg-slate-400">Repositori CompREd</header>
       
-      <section className="grid w-full grid-cols-2 gap-4 px-2 py-4 sm:grid-cols-3">
-        <DimensionFilters setFilter={setFilter} />
-      </section>
+      <DimensionFilters setFilter={setFilter} />
 
       <div className="relative w-full px-2 sm:mr-auto sm:w-80">
         <input className="w-full px-4 py-2 text-lg border rounded border-slate-300" type="text" placeholder="Cerca al repositori" value={filter} onChange={(e) => setFilter(e.target.value)} />
