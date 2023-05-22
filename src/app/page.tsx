@@ -26,7 +26,7 @@ const App = () => {
   const [filter, setFilter] = useState('');
 
   return (
-    <main className='flex flex-col items-center w-screen h-screen'>
+    <main className='flex flex-col items-center w-screen h-screen p-4'>
       <header className="flex flex-col items-center justify-center w-full px-2 pt-4 sm:gap-2 sm:justify-start sm:flex-row">
         <span className="text-3xl font-semibold">Repositori</span>
         <a href="https://webs.uab.cat/compred/" target="_blank" rel="noreferrer">
