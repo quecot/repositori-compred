@@ -14,7 +14,7 @@ const ResourceCard: React.FC<Props> = ({ resource }) => {
   const levels = [];
 
   for (let i = 0; i < resource.level; i += 1) {
-      levels.push(<span title="Nivell"><FontAwesomeIcon icon={faLightbulb} aria-hidden="true" className="text-lg text-yellow-400" key={resource.id + i} /></span>);
+      levels.push(<span title="Nivell" key={resource.id + i + "title"}><FontAwesomeIcon icon={faLightbulb} aria-hidden="true" className="text-lg text-yellow-400" key={resource.id + i} /></span>);
   }
 
 
