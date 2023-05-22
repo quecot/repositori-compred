@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import Resource from '@/app/interfaces/resource';
 import { dimensionToColor } from '@/app/constants';
@@ -16,7 +14,7 @@ const ResourceCard: React.FC<Props> = ({ resource }) => {
   const levels = [];
 
   for (let i = 0; i < resource.level; i += 1) {
-      levels.push(<FontAwesomeIcon icon={faLightbulb} aria-hidden="true" className="text-lg text-yellow-400" key={i} />);
+      levels.push(<FontAwesomeIcon icon={faLightbulb} aria-hidden="true" className="text-lg text-yellow-400" key={resource.id + i} />);
   }
 
 
@@ -38,23 +36,23 @@ const ResourceCard: React.FC<Props> = ({ resource }) => {
 
         <div className="flex items-center gap-2 px-2">
           {
-            resource.language === 'Català' ? <img src='/catalonia.svg' className="w-6 rounded" alt="Català" title="Català" /> :
-            resource.language === 'English' ? <img src='/uk.svg' className="w-6 rounded" alt="English" title="English" /> :
-            resource.language === 'Español' ? <img src='/spain.svg' className="w-6 rounded" alt="Español" title="Español" /> :
+            resource.language === 'Català' ? <img id="flag-icons-es-ct" src='/catalonia.svg' className="w-6 rounded" alt="Català" title="Català" /> :
+            resource.language === 'English' ? <img id="flag-icons-gb" src='/uk.svg' className="w-6 rounded" alt="English" title="English" /> :
+            resource.language === 'Español' ? <img id="flag-icons-es" src='/spain.svg' className="w-6 rounded" alt="Español" title="Español" /> :
             null
           }
           
           {
-            resource.type === 'Llibre' ? <FontAwesomeIcon icon={faBook} title="Llibre" /> :
-            resource.type === 'Recurs web' ? <FontAwesomeIcon icon={faGlobe} title="Recurs web" /> :
-            resource.type === 'Article' ? <FontAwesomeIcon icon={faNewspaper} title="Article" /> :
-            resource.type === 'Presentació' ? <FontAwesomeIcon icon={faFilePowerpoint} title="Presentació" /> :
-            resource.type === 'Quiz' ? <FontAwesomeIcon icon={faQuestionCircle} title="Quiz" /> :
-            resource.type === 'Vídeo' ? <FontAwesomeIcon icon={faYoutube} title="Vídeo" /> :
+            resource.type === 'Llibre' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faBook} /> :
+            resource.type === 'Recurs web' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faGlobe} /> :
+            resource.type === 'Article' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faNewspaper} /> :
+            resource.type === 'Presentació' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faFilePowerpoint} /> :
+            resource.type === 'Quiz' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faQuestionCircle} /> :
+            resource.type === 'Vídeo' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faYoutube} /> :
             null
           }
           
-          <a href={resource.url} target='_blank' rel='noreferrer'><FontAwesomeIcon icon={faLink} title="Enllaç" /></a>
+          <a href={resource.url} target='_blank' rel='noreferrer'><FontAwesomeIcon id={resource.id + "-link"} icon={faLink} /></a>
         </div>
       </div>
     </div>
