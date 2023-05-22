@@ -1,6 +1,4 @@
-"use client"
-
-import Resource from "@/app/components/interfaces/resource"
+import Resource from "@/app/interfaces/resource"
 import ResourceCard from "./ResourceCard"
 
 interface Props {
