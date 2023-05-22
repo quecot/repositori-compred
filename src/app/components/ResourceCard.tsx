@@ -14,7 +14,7 @@ const ResourceCard: React.FC<Props> = ({ resource }) => {
   const levels = [];
 
   for (let i = 0; i < resource.level; i += 1) {
-      levels.push(<FontAwesomeIcon icon={faLightbulb} aria-hidden="true" className="text-lg text-yellow-400" key={resource.id + i} />);
+      levels.push(<span title="Nivell"><FontAwesomeIcon icon={faLightbulb} aria-hidden="true" className="text-lg text-yellow-400" key={resource.id + i} /></span>);
   }
 
 
@@ -43,16 +43,16 @@ const ResourceCard: React.FC<Props> = ({ resource }) => {
           }
           
           {
-            resource.type === 'Llibre' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faBook} /> :
-            resource.type === 'Recurs web' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faGlobe} /> :
-            resource.type === 'Article' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faNewspaper} /> :
-            resource.type === 'Presentació' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faFilePowerpoint} /> :
-            resource.type === 'Quiz' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faQuestionCircle} /> :
-            resource.type === 'Vídeo' ? <FontAwesomeIcon id={resource.id + "-type"} icon={faYoutube} /> :
+            resource.type === 'Llibre' ? <span title="Llibre"><FontAwesomeIcon id={resource.id + "-type"} icon={faBook} /></span> :
+            resource.type === 'Recurs web' ? <span title="Recurs web"><FontAwesomeIcon id={resource.id + "-type"} icon={faGlobe} /></span> :
+            resource.type === 'Article' ? <span title="Article"><FontAwesomeIcon id={resource.id + "-type"} icon={faNewspaper} /></span> :
+            resource.type === 'Presentació' ? <span title="Presentació"><FontAwesomeIcon id={resource.id + "-type"} icon={faFilePowerpoint} /></span> :
+            resource.type === 'Quiz' ? <span title="Quiz"><FontAwesomeIcon id={resource.id + "-type"} icon={faQuestionCircle} /></span> :
+            resource.type === 'Vídeo' ? <span title="Vídeo"><FontAwesomeIcon id={resource.id + "-type"} icon={faYoutube} /></span> :
             null
           }
           
-          <a href={resource.url} target='_blank' rel='noreferrer'><FontAwesomeIcon id={resource.id + "-link"} icon={faLink} /></a>
+          <a href={resource.url} target="_blank" rel="noreferrer"><span title="Enllaç"><FontAwesomeIcon id={resource.id + "-link"} icon={faLink} /></span></a>
         </div>
       </div>
     </div>
