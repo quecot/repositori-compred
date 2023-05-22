@@ -32,7 +32,7 @@ const ResourceCard: React.FC<Props> = ({ resource }) => {
       <p className='m-2 mb-0'>{ resource.description ?? 'Descripció: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' }</p>
 
       <div className={`bg-${color} w-full p-1 mt-3 text-white rounded-b flex justify-between`}>
-        <span className="px-2 font-semibold whitespace-nowrap">{resource.dimension}</span>
+        <span className="px-2 overflow-hidden font-semibold text-ellipsis hover:whitespace-normal whitespace-nowrap">{resource.dimension}</span>
 
         <div className="flex items-center gap-2 px-2">
           {
