@@ -1,3 +1,5 @@
+"use client"
+
 interface Props {
   setFilter: (filter: string) => void
 }

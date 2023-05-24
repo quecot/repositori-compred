@@ -3,11 +3,12 @@
 import { FormEvent, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import DimensionFilters from "../components/DimensionFilters";
-import { resources } from "@/app/constants";
+import { resources as r } from "@/app/constants";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import Resource from "../interfaces/resource";
 import AdminResources from "../components/AdminResources";
+import { v4 as uuid } from "uuid";
 
 let session: any;
 supabase.auth.getSession().then((supabaseSession) => { session = supabaseSession.data.session });
@@ -43,11 +44,14 @@ const filteredResources = (resources: Array<Resource>, filter: string) => {
 }
 
 
+
+
 const Admin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [filter, setFilter] = useState('');
   const [addingResource, setAddingResource] = useState(false);
+  const [resources, setResources] = useState<Array<Resource>>(r);
 
   if (session === null) {
     return (
@@ -63,8 +67,32 @@ const Admin = () => {
     )
   }
 
-  const addNewResource = () => {
+  const toggleNewResource = () => {
     setAddingResource(true);
+  }
+
+  const handleAddResource = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    
+    const newResource: Resource = {
+      dimension: data.get('dimension') as string,
+      level: parseInt(data.get('level') as string),
+      url: data.get('url') as string,
+      title: data.get('title') as string,
+      type: data.get('type') as string,
+      language: data.get('language') as string,
+      subdimension: data.get('subdimension')?.toString(),
+      id: uuid(),
+      description: data.get('description')?.toString(),
+    };
+
+    setResources([newResource, ...resources]);
+    setAddingResource(false);
+  }
+
+  const deleteResource = (id: string) => {
+    setResources(resources.filter((r) => r.id !== id));
   }
 
   return (
@@ -86,22 +114,23 @@ const Admin = () => {
 
         <div className="flex items-center gap-4">
           <span className="w-full py-2 pl-2 mr-auto font-bold text-center sm:text-left">{filteredResources(resources, filter).length} {filteredResources(resources, filter).length === 1 ? 'recurs disponible' : 'recursos disponibles' }</span>
-          <button onClick={addNewResource} className="p-2 bg-green-300 rounded hover:bg-green-400">Afegeix</button>
+          <button onClick={toggleNewResource} className="p-2 shadow-md hover:scale-[1.03] bg-green-300 rounded hover:bg-green-400">Afegeix</button>
         </div>
 
-        <AdminResources resources={filteredResources(resources, filter)} />
+        <AdminResources resources={filteredResources(resources, filter)} deleteResource={deleteResource} />
         
       </main>
 
       {
         addingResource ?  (
-        <div className="absolute inset-0 flex items-center justify-center w-full h-full backdrop-blur-3xl">
-          <div className="w-2/3 p-4 overflow-scroll bg-white rounded h-5/6">
+        <div className="absolute inset-0 flex items-center justify-center w-screen h-screen backdrop-blur-3xl">
+          <div className="relative w-2/3 p-4 overflow-scroll bg-white rounded shadow-md h-5/6">
+            <button className="absolute py-2 px-[14px] right-4 top-[3px] text-xl hover:scale-[1.1]" onClick={() => setAddingResource(false)}>×</button>
             <h2 className="w-full text-2xl font-semibold text-center">Afegeix un recurs</h2>
-            <form className="flex flex-col gap-4 p-4">
+            <form onSubmit={handleAddResource} className="flex flex-col gap-4 p-4">
               <label className="flex flex-col gap-1">
                 <span>Títol</span>
-                <input className="p-2 border rounded border-slate-300" type="text" />
+                <input className="p-2 border rounded border-slate-300" type="text" name="title" required />
               </label>
               <label className="flex flex-col gap-1">
                 <span>Tipus</span>
@@ -117,7 +146,7 @@ const Admin = () => {
               </label>
               <label className="flex flex-col gap-1">
                 <span>Dimensió</span>
-                <select className="p-2 border rounded border-slate-300" name="type" id="type">
+                <select className="p-2 border rounded border-slate-300" name="dimension" id="dimension">
                   <option value="Planificació de la recerca">Planificació de la recerca</option>
                   <option value="Fonamentació teòrica">Fonamentació teòrica</option>
                   <option value="Disseny i aplicació">Disseny i aplicació</option>
@@ -128,7 +157,11 @@ const Admin = () => {
               </label>
               <label className="flex flex-col gap-1">
                 <span>Subdimensió (opcional)</span>
-                <input className="p-2 border rounded border-slate-300" type="text" />
+                <input className="p-2 border rounded border-slate-300" name="subdimension" type="text" />
+              </label>
+              <label className="flex flex-col gap-1">
+                <span>Descripció</span>
+                <input className="p-2 border rounded border-slate-300" name="description" type="text" />
               </label>
               <label className="flex flex-col gap-1">
                 <span>Nivell</span>
@@ -148,9 +181,9 @@ const Admin = () => {
               </label>
               <label className="flex flex-col gap-1">
                 <span>Enllaç</span>
-                <input className="p-2 border rounded border-slate-300" type="text" placeholder="https://compred.com/recursos/recurs-molt-xulo"/>
+                <input className="p-2 border rounded border-slate-300" name="url" type="text" placeholder="https://compred.com/recursos/recurs-molt-xulo" required/>
               </label>
-              <button className="p-2 rounded bg-slate-200 hover:bg-slate-300">Afegeix</button>
+              <button className="p-2 rounded bg-slate-200 hover:bg-slate-300 hover:scale-[1.03]">Afegeix</button>
             </form>
           </div>
         </div>) : null
