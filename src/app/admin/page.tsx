@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { supabase } from "../lib/supabaseClient";
 import DimensionFilters from "../components/DimensionFilters";
 import { resources as r } from "@/app/constants";
@@ -12,6 +12,9 @@ import LoginForm from "../components/LoginForm";
 import AddResource from "../components/AddResource";
 import SearchFilter from "../components/SearchFilter";
 import Header from "../components/Header";
+import { Session } from "@supabase/supabase-js";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 let session: any;
 supabase.auth.getSession().then((supabaseSession) => { session = supabaseSession.data.session });
@@ -37,6 +40,35 @@ const Admin = () => {
   const [filter, setFilter] = useState('');
   const [addingResource, setAddingResource] = useState(false);
   const [resources, setResources] = useState<Array<Resource>>(r);
+  const [session, setSession] = useState<Session | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    supabase.auth.getSession().then((supabaseSession) => {
+      setSession(supabaseSession.data.session);
+    });
+    
+    setLoading(false);
+  }, []);
+
+  const toggleNewResource = () => {
+    setAddingResource(true);
+  }
+
+  const deleteResource = (id: string) => {
+    setResources(resources.filter((r) => r.id !== id));
+  }
+
+  if (loading) {
+    return (
+      <main className="flex flex-col w-screen h-screen">
+        <Header />
+        <div className="flex items-center justify-center h-full">
+          <FontAwesomeIcon icon={faSpinner} className="text-2xl animate-spin" />
+        </div>
+      </main>
+    )
+  }
 
   if (session === null) {
     return (
@@ -45,14 +77,6 @@ const Admin = () => {
         <LoginForm />
       </main>
     )
-  }
-
-  const toggleNewResource = () => {
-    setAddingResource(true);
-  }
-
-  const deleteResource = (id: string) => {
-    setResources(resources.filter((r) => r.id !== id));
   }
 
   return (
