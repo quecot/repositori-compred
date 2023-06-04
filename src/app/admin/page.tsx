@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import filteredResources from "../utils/filteredResources";
 import useResources from "../hooks/useResources";
+// import upload from "../constants/uploadManually";
 
 let session: any;
 supabase.auth.getSession().then((supabaseSession) => { session = supabaseSession.data.session });
@@ -72,6 +73,7 @@ const Admin = () => {
 
   return (
     <>
+      {/* <button onClick={upload}>Upload manually</button> */}
       <main className="flex flex-col items-center w-screen h-screen gap-2 p-12">
         <div className="flex flex-col items-center justify-center gap-4 p-4 px-12 rounded bg-slate-200">
           <h1 className="w-full text-2xl font-semibold text-center">Admin</h1>
