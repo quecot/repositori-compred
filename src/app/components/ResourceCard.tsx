@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import Resource from '@/app/interfaces/resource';
 import { dimensionToColor } from '@/app/constants';

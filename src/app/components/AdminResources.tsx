@@ -1,5 +1,3 @@
-"use client"
-
 import Resource from "@/app/interfaces/resource"
 import AdminResourceCard from "./AdminResourceCard"
 
