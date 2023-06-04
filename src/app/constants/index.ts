@@ -1,8 +1,9 @@
 import Resource from "@/app/interfaces/resource";
 
-const resources: Array<Resource> = [
+const dummyResources: Array<Resource> = [
   {
     id: '0',
+    description: 'TBD',
     title: 'Planteamiento del problema de investigación: desde la óptica cuantitativa y cualitativa',
     type: 'Llibre',
     dimension: 'Planificació de la recerca',
@@ -13,6 +14,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '1',
+    description: 'TBD',
     title: '¿Cómo escoger un tema de investigación y construir una pregunta de investigación?',
     type: 'Article',
     dimension: 'Planificació de la recerca',
@@ -23,6 +25,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '2',
+    description: 'TBD',
     title: 'La formulació dels objectius de recerca',
     type: 'Recurs web',
     dimension: 'Planificació de la recerca',
@@ -33,6 +36,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '3',
+    description: 'TBD',
     title: 'Transcripció de Dades Plurilingües/Multimodals',
     type: 'Recurs web',
     dimension: 'Fonamentació teòrica',
@@ -43,6 +47,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '4',
+    description: 'TBD',
     title: 'Good Literature Searching',
     type: 'Article',
     dimension: 'Fonamentació teòrica',
@@ -53,6 +58,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '5',
+    description: 'TBD',
     title: 'Art of reading a journal article: Methodically and effectively',
     type: 'Article',
     dimension: 'Fonamentació teòrica',
@@ -63,6 +69,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '6',
+    description: 'TBD',
     title: 'Eines i recursos documentals per al treball de recerca en Educació',
     type: 'Presentació',
     dimension: 'Fonamentació teòrica',
@@ -73,6 +80,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '7',
+    description: 'TBD',
     title: 'Cerca i gestió de la informació: les principals fonts d\'informació en Educació, Psicologia i Logopèdia',
     type: 'Presentació',
     dimension: 'Fonamentació teòrica',
@@ -83,6 +91,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '8',
+    description: 'TBD',
     title: 'Approaching literature review for academic purposes',
     type: 'Article',
     dimension: 'Fonamentació teòrica',
@@ -93,6 +102,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '9',
+    description: 'TBD',
     title: 'Best-Practice Recommendations of Methodological Literature Reviews',
     type: 'Article',
     dimension: 'Fonamentació teòrica',
@@ -103,6 +113,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '10',
+    description: 'TBD',
     title: 'Recerca qualitativa sobre educació plurilingüe',
     type: 'Llibre',
     dimension: 'Disseny i aplicació',
@@ -113,6 +124,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '11',
+    description: 'TBD',
     title: 'Studying the Use of Research Evidence: A Review of Methods',
     type: 'Llibre',
     dimension: 'Disseny i aplicació',
@@ -123,6 +135,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '12',
+    description: 'TBD',
     title: 'Historias de vida',
     type: 'Article',
     dimension: 'Disseny i aplicació',
@@ -133,6 +146,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '13',
+    description: 'TBD',
     title: 'Quantitatiu o Qualitatiu? Escull!',
     type: 'Quiz',
     dimension: 'Disseny i aplicació',
@@ -143,6 +157,7 @@ const resources: Array<Resource> = [
   },
   {
     id: '14',
+    description: 'TBD',
     title: 'A guide for naming research studies',
     type: 'Article',
     dimension: 'Disseny i aplicació',
@@ -153,33 +168,40 @@ const resources: Array<Resource> = [
   },
   {
     id: '15',
+    description: 'TBD',
     title: 'Discussió vs conclusions: principis i directrius ',
     type: 'Vídeo',
     dimension: 'Discussió i conclusions',
+    subdimension: '',
     level: 1,
     language: 'Català',
     url: 'https://www.youtube.com/watch?v=_0MwkPVxLYo&list=PLfbyb8xMvO3GYYg9NphpQcrtxrruFTY9R&index=4',
   },
   {
     id: '16',
+    description: 'TBD',
     title: 'What\'s new in APA Style 7th Edition',
     type: 'Vídeo',
     dimension: 'Bibliografia',
+    subdimension: '',
     level: 1,
     language: 'English',
     url: 'https://www.youtube.com/watch?v=jOVZp8m0PCM&feature=youtu.be',
   },
   {
     id: '17',
+    description: 'TBD',
     title: 'Com citar i referenciar en els textos acadèmics',
     type: 'Llibre',
     dimension: 'Bibliografia',
+    subdimension: '',
     level: 1,
     language: 'Català',
     url: 'https://ddd.uab.cat/record/145881?ln=es',
   },
   {
     id: '18',
+    description: 'TBD',
     title: 'Com elaborar el Treball Final de Grau',
     type: 'Vídeo',
     dimension: 'Comunicació i TIC',
@@ -198,4 +220,4 @@ dimensionToColor.set('Discussió i conclusions', 'c4');
 dimensionToColor.set('Bibliografia', 'c5');
 dimensionToColor.set('Comunicació i TIC', 'c6');
 
-export { resources, dimensionToColor };
+export { dummyResources, dimensionToColor };

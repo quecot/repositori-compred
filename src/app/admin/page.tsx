@@ -3,10 +3,8 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../lib/supabaseClient";
 import DimensionFilters from "../components/DimensionFilters";
-import { resources as r } from "@/app/constants";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import Resource from "../interfaces/resource";
 import AdminResources from "../components/AdminResources";
 import LoginForm from "../components/LoginForm";
 import AddResource from "../components/AddResource";
@@ -15,6 +13,8 @@ import Header from "../components/Header";
 import { Session } from "@supabase/supabase-js";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import filteredResources from "../utils/filteredResources";
+import useResources from "../hooks/useResources";
 
 let session: any;
 supabase.auth.getSession().then((supabaseSession) => { session = supabaseSession.data.session });
@@ -25,23 +25,13 @@ const handleSignOut = () => {
 
 config.autoAddCss = false
 
-const filteredResources = (resources: Array<Resource>, filter: string) => {
-  const curatedFilter = filter.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
-  
-  return resources.filter((r) => {
-    const title = r.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
-    const dimension = r.dimension.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
-
-    return title.includes(curatedFilter) || dimension.includes(curatedFilter);
-  });
-}
-
 const Admin = () => {
   const [filter, setFilter] = useState('');
   const [addingResource, setAddingResource] = useState(false);
-  const [resources, setResources] = useState<Array<Resource>>(r);
+  const { resources, setResources } = useResources();
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     supabase.auth.getSession().then((supabaseSession) => {
@@ -55,8 +45,9 @@ const Admin = () => {
     setAddingResource(true);
   }
 
-  const deleteResource = (id: string) => {
+  const deleteResource = async (id: string) => {
     setResources(resources.filter((r) => r.id !== id));
+    await supabase.from('resources').delete().eq('id', id);
   }
 
   if (loading) {

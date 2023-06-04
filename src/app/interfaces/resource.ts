@@ -1,12 +1,12 @@
 interface Resource {
   id: string
   title: string
-  description?: string
+  description: string
   type: string
   dimension: string
-  subdimension?: string
+  subdimension: string
   level: number
-  language?: string
+  language: string
   url: string
 }
 

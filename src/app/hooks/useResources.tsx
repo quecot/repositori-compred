@@ -1,22 +1,24 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
+import Resource from '../interfaces/resource';
 
 const useResources = () => {
-  const [resources, setResources] = useState([]);
+  const [resources, setResources] = useState<Array<Resource>>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchResources = async () => {
       try {
         const { data, error } = await supabase
           .from('resources')
-          .select('*');
+          .select('*')
+          .order('createdAt', { ascending: false });
 
         if (error) throw error;
-        // setResources(data);
-      } catch (error) {
-        // setError(error);
+
+        if (data === null) { return; }
+
+        setResources(data);
       } finally {
         setLoading(false);
       }
@@ -25,7 +27,7 @@ const useResources = () => {
     fetchResources();
   }, []);
 
-  return { resources, loading, error };
+  return { resources, setResources, loading };
 }
 
 export default useResources;

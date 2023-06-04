@@ -1,6 +1,7 @@
 import React, { Dispatch, FormEvent, SetStateAction } from 'react';
 import Resource from '../interfaces/resource';
 import { v4 as uuid } from 'uuid';
+import { supabase } from '../lib/supabaseClient';
 
 interface Props {
   resources: Array<Resource>
@@ -9,7 +10,7 @@ interface Props {
 }
 
 const AddResource: React.FC<Props> = ({ resources, setResources, setAddingResource }) => {
-  const handleAddResource = (e: FormEvent<HTMLFormElement>) => {
+  const handleAddResource = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     
@@ -20,12 +21,13 @@ const AddResource: React.FC<Props> = ({ resources, setResources, setAddingResour
       title: data.get('title') as string,
       type: data.get('type') as string,
       language: data.get('language') as string,
-      subdimension: data.get('subdimension')?.toString(),
+      subdimension: data.get('subdimension') as string,
       id: uuid(),
-      description: data.get('description')?.toString(),
+      description: data.get('description') as string,
     };
 
     setResources([newResource, ...resources]);
+    await supabase.from('resources').insert(newResource)
     setAddingResource(false);
   }
 
@@ -63,12 +65,12 @@ const AddResource: React.FC<Props> = ({ resources, setResources, setAddingResour
                 </select>
               </label>
               <label className="flex flex-col gap-1">
-                <span>Subdimensió (opcional)</span>
-                <input className="p-2 border rounded border-slate-300" name="subdimension" type="text" />
+                <span>Subdimensió (o tema, en cas que no en tingui)</span>
+                <input className="p-2 border rounded border-slate-300" name="subdimension" type="text" required />
               </label>
               <label className="flex flex-col gap-1">
                 <span>Descripció</span>
-                <input className="p-2 border rounded border-slate-300" name="description" type="text" />
+                <input className="p-2 border rounded border-slate-300" name="description" type="text" required />
               </label>
               <label className="flex flex-col gap-1">
                 <span>Nivell</span>
