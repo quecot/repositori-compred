@@ -28,6 +28,7 @@ content:
             - Presentació
             - Vídeo
             - Quiz
+            - Altres
       - name: dimension
         label: Dimensió
         type: string
