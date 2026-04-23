@@ -8,6 +8,6 @@ export default defineConfig({
     plugins: [tailwind()],
   },
   redirects: {
-    "/admin": "https://app.pagescms.org/repositori-compred",
+    "/admin": "https://app.pagescms.org/quecot/repositori-compred",
   },
 });

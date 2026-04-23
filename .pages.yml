@@ -10,47 +10,49 @@ content:
         label: Publicat
         type: boolean
         default: true
-        description: Per mostrar/amagar recursos
+        description: Si està marcat, el recurs apareixerà al lloc web
       - name: title
-        label: Títol
+        label: Titol
         type: string
-        description: Títol del recurs de recerca
-        placeholder: Ex: Com fer una revisió bibliogràfica
+        description: Titol del recurs de recerca
+        placeholder: Ex: Com fer una revisio bibliografica
       - name: type
         label: Tipus
-        type: string
+        type: select
         description: Tipus de recurs
         options:
-          choices:
+          values:
             - Llibre
             - Article
             - Recurs web
-            - Presentació
-            - Vídeo
+            - Presentacio
+            - Video
             - Quiz
             - Altres
+        required: true
       - name: dimension
-        label: Dimensió
-        type: string
-        description: Àrea temàtica principal del recurs
+        label: Dimension
+        type: select
+        description: Area tematica principal del recurs
         options:
-          choices:
-            - Planificació de la recerca
-            - Fonamentació teòrica
-            - Disseny i aplicació
-            - Discussió i conclusions
+          values:
+            - Planificacio de la recerca
+            - Fonamentacio teoorica
+            - Disseny i aplicacio
+            - Discussio i conclusions
             - Bibliografia
-            - Comunicació i TIC
+            - Comunicacio i TIC
+        required: true
       - name: subdimension
-        label: Subdimensió
+        label: Subdimension
         type: string
-        description: Temàtica específica dins de la dimensió
+        description: Tematica especifica dins de la dimensio
         required: false
-        placeholder: Ex: Cerca d'informació
+        placeholder: Ex: Cerca dinformacio
       - name: level
         label: Nivell
         type: number
-        description: Nivell de dificultat (1=bàsic, 2=intermedi, 3=avançat)
+        description: Nivell de dificultat (1=basic, 2=intermedi, 3=avancat)
         options:
           min: 1
           max: 3
@@ -58,7 +60,7 @@ content:
       - name: url
         label: URL
         type: string
-        description: Enllaç al recurs extern
+        description: Enllac al recurs extern
         placeholder: https://...
 
 settings:

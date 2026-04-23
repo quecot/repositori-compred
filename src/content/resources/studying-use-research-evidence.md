@@ -2,8 +2,8 @@
 published: true
 title: Studying the Use of Research Evidence A Review of Methods
 type: Llibre
-dimension: Disseny i aplicació
-subdimension: Dissenys metodològics
+dimension: Disseny i aplicacio
+subdimension: Dissenys metodologics
 level: 2
 url: https://wtgrantfoundation.org/library/uploads/2019/02/A-Review-of-Methods-FINAL003.pdf
 ---
