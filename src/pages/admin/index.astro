@@ -1,0 +1,9 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AdminApp from '../../components/admin/AdminApp';
+import { resources } from '../../lib/resources';
+---
+
+<Layout title="Admin - Repositori ComPred">
+  <AdminApp client:load resources={resources} />
+</Layout>

@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import App from '../components/App';
+import { resources } from '../lib/resources';
+---
+
+<Layout title="Repositori ComPred">
+  <App client:load resources={resources} />
+</Layout>
