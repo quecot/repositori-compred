@@ -1,0 +1,8 @@
+---
+published: true
+title: Com citar i referenciar textos academics
+type: Llibre
+dimension: Bibliografia
+level: 1
+url: https://ddd.uab.cat/record/145881
+---

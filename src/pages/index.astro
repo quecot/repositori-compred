@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import App from '../components/App';
-import { resources } from '../lib/resources';
+import { getCollection } from 'astro:content';
+
+const resources = await getCollection('resources');
 ---
 
-<Layout title="Repositori ComPred">
-  <App client:load resources={resources} />
+<Layout title="COMPRED - Recursos de Recerca">
+  <App resources={resources} client:load />
 </Layout>

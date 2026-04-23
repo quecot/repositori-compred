@@ -1,18 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --color-c1: #1f3a5f;
-  --color-c2: #3d5a80;
-  --color-c3: #98c1d9;
-  --color-c4: #ee6c4d;
-  --color-c5: #293241;
-  --color-c6: #6d597a;
-}
-
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+@theme {
+  --color-c1: #3b82f6;
+  --color-c2: #8b5cf6;
+  --color-c3: #ec4899;
+  --color-c4: #f59e0b;
+  --color-c5: #10b981;
+  --color-c6: #6366f1;
 }
 
 .bg-c1 { background-color: var(--color-c1); }
@@ -21,3 +15,10 @@ body {
 .bg-c4 { background-color: var(--color-c4); }
 .bg-c5 { background-color: var(--color-c5); }
 .bg-c6 { background-color: var(--color-c6); }
+
+.fill-c1 { fill: var(--color-c1); }
+.fill-c2 { fill: var(--color-c2); }
+.fill-c3 { fill: var(--color-c3); }
+.fill-c4 { fill: var(--color-c4); }
+.fill-c5 { fill: var(--color-c5); }
+.fill-c6 { fill: var(--color-c6); }
