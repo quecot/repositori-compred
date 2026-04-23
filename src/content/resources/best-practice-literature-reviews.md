@@ -1,9 +1,9 @@
 ---
 published: true
-title: Best-Practice Recommendations of Methodological Literature Reviews
+title: Best-Practice Recommendations Methodological Literature Reviews
 type: Article
-dimension: Fonamentacio teorica
-subdimension: Estrategies d'elaboracio del text
+dimension: Fonamentació teòrica
+subdimension: Estratègies d'elaboració del text
 level: 2
 url: https://journals.sagepub.com/doi/full/10.1177/1094428120943281
 ---

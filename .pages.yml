@@ -15,7 +15,7 @@ content:
         label: Titol
         type: string
         description: Titol del recurs de recerca
-        placeholder: Ex: Com fer una revisio bibliografica
+        placeholder: "Ex: Com fer una revisió bibliogràfica"
       - name: type
         label: Tipus
         type: select
@@ -25,34 +25,34 @@ content:
             - Llibre
             - Article
             - Recurs web
-            - Presentacio
-            - Video
+            - Presentació
+            - Vídeo
             - Quiz
             - Altres
         required: true
       - name: dimension
-        label: Dimension
+        label: Dimensions
         type: select
-        description: Area tematica principal del recurs
+        description: Àrea temàtica principal del recurs
         options:
           values:
-            - Planificacio de la recerca
-            - Fonamentacio teoorica
-            - Disseny i aplicacio
-            - Discussio i conclusions
+            - Planificació de la recerca
+            - Fonamentació teòrica
+            - Disseny i aplicació
+            - Discussió i conclusions
             - Bibliografia
-            - Comunicacio i TIC
+            - Comunicació i TIC
         required: true
       - name: subdimension
-        label: Subdimension
+        label: Subdimensió
         type: string
-        description: Tematica especifica dins de la dimensio
+        description: Temàtica específica dins de la dimensió
         required: false
-        placeholder: Ex: Cerca dinformacio
+        placeholder: "Ex: Cerca d'informació"
       - name: level
         label: Nivell
         type: number
-        description: Nivell de dificultat (1=basic, 2=intermedi, 3=avancat)
+        description: Nivell de dificultat (1=bàsic, 2=intermedi, 3=avançat)
         options:
           min: 1
           max: 3
@@ -60,7 +60,7 @@ content:
       - name: url
         label: URL
         type: string
-        description: Enllac al recurs extern
+        description: Enllaç al recurs extern
         placeholder: https://...
 
 settings:
