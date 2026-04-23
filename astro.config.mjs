@@ -4,10 +4,10 @@ import tailwind from '@tailwindcss/vite';
 
 export default defineConfig({
   integrations: [react()],
-  server: {
-    host: true,
-  },
   vite: {
     plugins: [tailwind()],
+  },
+  redirects: {
+    "/admin": "https://app.pagescms.org/repositori-compred",
   },
 });
