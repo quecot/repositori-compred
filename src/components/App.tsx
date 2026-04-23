@@ -16,12 +16,12 @@ interface Resource {
 }
 
 const dimensionToColor = new Map<string, string>();
-dimensionToColor.set('Planificacio de la recerca', 'c1');
-dimensionToColor.set('Fonamentacio teorica', 'c2');
-dimensionToColor.set('Disseny i aplicacio', 'c3');
-dimensionToColor.set('Discussio i conclusions', 'c4');
+dimensionToColor.set('Planificació de la recerca', 'c1');
+dimensionToColor.set('Fonamentació teòrica', 'c2');
+dimensionToColor.set('Disseny i aplicació', 'c3');
+dimensionToColor.set('Discussió i conclusions', 'c4');
 dimensionToColor.set('Bibliografia', 'c5');
-dimensionToColor.set('Comunicacio i TIC', 'c6');
+dimensionToColor.set('Comunicació i TIC', 'c6');
 
 const checkMobile = (): boolean => {
   if (typeof window === 'undefined') return false;

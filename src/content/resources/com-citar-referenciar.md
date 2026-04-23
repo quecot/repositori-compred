@@ -1,6 +1,6 @@
 ---
 published: true
-title: Com citar i referenciar textos academics
+title: Com citar i referenciar en els textos academics
 type: Llibre
 dimension: Bibliografia
 level: 1

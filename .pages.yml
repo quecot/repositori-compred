@@ -10,38 +10,46 @@ content:
         label: Publicat
         type: boolean
         default: true
+        description: Per mostrar/amagar recursos
       - name: title
-        label: Titol
+        label: Títol
         type: string
+        description: Títol del recurs de recerca
+        placeholder: Ex: Com fer una revisió bibliogràfica
       - name: type
         label: Tipus
         type: string
+        description: Tipus de recurs
         options:
           choices:
             - Llibre
             - Article
             - Recurs web
-            - Presentacio
-            - Video
+            - Presentació
+            - Vídeo
             - Quiz
       - name: dimension
-        label: Dimension
+        label: Dimensió
         type: string
+        description: Àrea temàtica principal del recurs
         options:
           choices:
-            - Planificacio de la recerca
-            - Fonamentacio teoerica
-            - Disseny i aplicacio
-            - Discussio i conclusions
+            - Planificació de la recerca
+            - Fonamentació teòrica
+            - Disseny i aplicació
+            - Discussió i conclusions
             - Bibliografia
-            - Comunicacio i TIC
+            - Comunicació i TIC
       - name: subdimension
-        label: Subdimension
+        label: Subdimensió
         type: string
+        description: Temàtica específica dins de la dimensió
         required: false
+        placeholder: Ex: Cerca d'informació
       - name: level
         label: Nivell
         type: number
+        description: Nivell de dificultat (1=bàsic, 2=intermedi, 3=avançat)
         options:
           min: 1
           max: 3
@@ -49,6 +57,8 @@ content:
       - name: url
         label: URL
         type: string
+        description: Enllaç al recurs extern
+        placeholder: https://...
 
 settings:
   hide: true

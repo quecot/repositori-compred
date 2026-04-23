@@ -3,7 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import App from '../components/App';
 import { getCollection } from 'astro:content';
 
-const resources = await getCollection('resources');
+const allResources = await getCollection('resources');
+const resources = allResources.filter(r => r.data.published !== false);
 ---
 
 <Layout title="COMPRED - Recursos de Recerca">
