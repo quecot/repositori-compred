@@ -18,6 +18,7 @@ const resources = defineCollection({
     subdimension: z.string().optional(),
     level: z.number().min(1).max(3),
     url: z.string(),
+    languages: z.array(z.enum(['ca', 'es', 'en'])).default(['ca']),
   }),
 });
 

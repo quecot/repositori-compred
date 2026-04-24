@@ -6,4 +6,5 @@ dimension: Fonamentació teòrica
 subdimension: Eines per cercar informació
 level: 2
 url: https://ddd.uab.cat/record/142532
+languages: ['ca']
 ---
