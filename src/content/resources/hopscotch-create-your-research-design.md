@@ -5,5 +5,8 @@ type: Recurs web
 dimension: Planificació de la recerca
 level: 1
 url: https://hopscotchmodel.com/bienvenidos/
-languages: ['es']
+languages:
+  ca: false
+  es: true
+  en: false
 ---

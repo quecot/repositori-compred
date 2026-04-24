@@ -6,5 +6,8 @@ dimension: Fonamentació teòrica
 subdimension: Cerca d'informació
 level: 1
 url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3687192/
-languages: ['en']
+languages:
+  ca: false
+  es: false
+  en: true
 ---

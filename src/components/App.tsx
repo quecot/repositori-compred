@@ -197,11 +197,14 @@ const App: React.FC<{ resources?: Resource[] }> = ({ resources: initialResources
                   </div>
                   <div className="flex items-center mt-1">
                     <span className="mr-2">Idiomes:</span>
-                    {(resource.data.languages || ['ca']).map((lang) => (
-                      <span key={lang} className="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded mr-1">
-                        {lang === 'ca' ? 'CA' : lang === 'es' ? 'ES' : 'EN'}
-                      </span>
-                    ))}
+                    {(() => {
+                      const l = resource.data.languages || { ca: true, es: false, en: false };
+                      return Object.entries(l).filter(([, v]) => v).map(([lang]) => (
+                        <span key={lang} className="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded mr-1">
+                          {lang.toUpperCase()}
+                        </span>
+                      ));
+                    })()}
                   </div>
                 </div>
               );

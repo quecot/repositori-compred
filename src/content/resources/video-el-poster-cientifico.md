@@ -5,5 +5,8 @@ type: Vídeo
 dimension: Comunicació i TIC
 level: 1
 url: https://www.youtube.com/watch?v=fmWpcy4_29c
-languages: ['es']
+languages:
+  ca: false
+  es: true
+  en: false
 ---

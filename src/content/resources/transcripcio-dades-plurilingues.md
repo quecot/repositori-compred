@@ -6,5 +6,8 @@ dimension: Fonamentació teòrica
 subdimension: Cerca d'informació
 level: 2
 url: https://tutorialfortrans.blogspot.com/
-languages: ['ca']
+languages:
+  ca: true
+  es: false
+  en: false
 ---

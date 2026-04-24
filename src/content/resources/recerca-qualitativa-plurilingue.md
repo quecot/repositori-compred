@@ -6,5 +6,8 @@ dimension: Disseny i aplicació
 subdimension: Dissenys metodològics
 level: 2
 url: https://research-publishing.net/publication/978-1-908416-47-6.pdf
-languages: ['ca', 'es']
+languages:
+  ca: true
+  es: true
+  en: false
 ---

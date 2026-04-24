@@ -6,5 +6,8 @@ dimension: Disseny i aplicació
 subdimension: Dissenys metodològics
 level: 1
 url: https://revistas.upr.edu/index.php/griot/article/download/1775/1568
-languages: ['es']
+languages:
+  ca: false
+  es: true
+  en: false
 ---

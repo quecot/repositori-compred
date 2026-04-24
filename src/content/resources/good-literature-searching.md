@@ -6,5 +6,8 @@ dimension: Fonamentació teòrica
 subdimension: Cerca d'informació
 level: 1
 url: https://www.review.mai.ac.nz/mrindex/TK/article/view/53/53.html
-languages: ['en']
+languages:
+  ca: false
+  es: false
+  en: true
 ---
