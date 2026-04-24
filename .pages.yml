@@ -62,6 +62,18 @@ content:
         type: string
         description: Enllaç al recurs extern
         placeholder: https://...
+      - name: languages
+        label: Idiomes
+        type: list
+        description: Idiomes en què está disponible el recurs
+        options:
+          values:
+            - ca
+            - es
+            - en
+          format: chips
+        default:
+          - ca
 
 settings:
   hide: true
