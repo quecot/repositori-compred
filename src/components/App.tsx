@@ -8,7 +8,7 @@ interface ResourceData {
   subdimension?: string;
   level: number;
   url: string;
-  languages: string[];
+  languages: { ca: boolean; es: boolean; en: boolean };
 }
 
 interface Resource {
@@ -54,8 +54,14 @@ const App: React.FC<{ resources?: Resource[] }> = ({ resources: initialResources
   }, [initialResources]);
 
   const languages = useMemo(() => {
-    const allLang = initialResources.flatMap((r) => r.data.languages || ['ca']);
-    return [...new Set(allLang)];
+    const langs: string[] = [];
+    initialResources.forEach((r) => {
+      const l = r.data.languages || { ca: true, es: false, en: false };
+      if (l.ca) langs.push('ca');
+      if (l.es) langs.push('es');
+      if (l.en) langs.push('en');
+    });
+    return [...new Set(langs)];
   }, [initialResources]);
 
   if (!isClient) {
@@ -157,7 +163,10 @@ const App: React.FC<{ resources?: Resource[] }> = ({ resources: initialResources
             .filter((r) => `${r.data.type.toLowerCase()}: ${r.data.title.toLowerCase()}`.includes(textFilter.toLowerCase()))
             .filter((r) => filterLevels.length === 0 || filterLevels.includes(r.data.level))
             .filter((r) => filterDimensions.length === 0 || filterDimensions.includes(r.data.dimension))
-            .filter((r) => filterLanguages.length === 0 || (r.data.languages || ['ca']).some((l) => filterLanguages.includes(l)))
+            .filter((r) => filterLanguages.length === 0 || (() => {
+              const l = r.data.languages || { ca: true, es: false, en: false };
+              return filterLanguages.some((fl) => l[fl as keyof typeof l]);
+            })())
             .map((resource) => {
               const color = dimensionToColor.get(resource.data.dimension) || 'gray';
               return (

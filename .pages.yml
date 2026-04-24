@@ -64,16 +64,19 @@ content:
         placeholder: https://...
       - name: languages
         label: Idiomes
-        type: list
-        description: Idiomes en què está disponible el recurs
-        options:
-          values:
-            - ca
-            - es
-            - en
-          format: chips
-        default:
-          - ca
+        type: object
+        description: Idiomes disponibles
+        fields:
+          - name: ca
+            label: Català
+            type: boolean
+            default: true
+          - name: es
+            label: Castellà
+            type: boolean
+          - name: en
+            label: Anglès
+            type: boolean
 
 settings:
   hide: true

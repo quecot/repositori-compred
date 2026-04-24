@@ -18,7 +18,11 @@ const resources = defineCollection({
     subdimension: z.string().optional(),
     level: z.number().min(1).max(3),
     url: z.string(),
-    languages: z.array(z.enum(['ca', 'es', 'en'])).default(['ca']),
+    languages: z.object({
+      ca: z.boolean().default(true),
+      es: z.boolean().default(false),
+      en: z.boolean().default(false),
+    }).default({ ca: true, es: false, en: false }),
   }),
 });
 
