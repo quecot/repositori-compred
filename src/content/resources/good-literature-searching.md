@@ -5,7 +5,7 @@ type: Article
 dimension: Fonamentació teòrica
 subdimension: Cerca d'informació
 level: 1
-url: https://www.review.mai.ac.nz/mrindex/TK/article/view/53/53.html
+url: https://www.journal.mai.ac.nz/system/files/maireview/44-44-1-PB.pdf
 languages:
   ca: false
   es: false
