@@ -1,6 +1,6 @@
 ---
 published: true
-title: Cerca i gestio de la informacio principals fonts dEducacio
+title: Cerca i gestio de la informacio principals fonts d'Educacio
 type: Presentació
 dimension: Fonamentació teòrica
 subdimension: Eines per cercar informació
