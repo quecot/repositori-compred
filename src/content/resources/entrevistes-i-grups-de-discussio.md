@@ -3,6 +3,7 @@ published: true
 title: Entrevistes i grups de discussió
 type: Vídeo
 dimension: Disseny i aplicació
+subdimension: Entrevista
 level: 2
 url: " https://youtu.be/rrLsi9m7Uj0"
 languages:
