@@ -60,7 +60,11 @@ content:
       - name: url
         label: URL
         type: string
-        description: Enllaç al recurs extern
+        required: true
+        pattern:
+          regex: '\S'
+          message: Introdueix l'enllaç al recurs.
+        description: Enllaç obligatori al recurs extern
         placeholder: https://...
       - name: languages
         label: Idiomes

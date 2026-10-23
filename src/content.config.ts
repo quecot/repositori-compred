@@ -17,7 +17,7 @@ const resources = defineCollection({
     ]),
     subdimension: z.string().optional(),
     level: z.number().min(1).max(3),
-    url: z.string(),
+    url: z.string().trim().min(1, "El recurs ha de tenir un enllaç."),
     languages: z.object({
       ca: z.boolean().default(true),
       es: z.boolean().default(false),
